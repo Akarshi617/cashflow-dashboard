@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Flow Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>💰 Cash Flow Dashboard</h1>
+
+        <!-- Warning Banner -->
+        <div id="warningBanner" class="warning hidden">
+            ⚠ Remaining Balance is below 10% of your Salary!
+        </div>
+
+        <!-- Salary Section -->
+        <div class="card">
+
+            <h2>Total Salary</h2>
+
+            <form id="salaryForm">
+
+                <input
+                    type="number"
+                    id="salaryInput"
+                    placeholder="Enter Total Salary"
+                    min="0"
+                    required>
+
+                <button type="submit">
+                    Save Salary
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Expense Section -->
+        <div class="card">
+
+            <h2>Add Expense</h2>
+
+            <form id="expenseForm">
+
+                <input
+                    type="text"
+                    id="expenseName"
+                    placeholder="Expense Name"
+                    required>
+
+                <input
+                    type="number"
+                    id="expenseAmount"
+                    placeholder="Expense Amount"
+                    min="0"
+                    required>
+
+                <button type="submit">
+                    Add Expense
+                </button>
+
+            </form>
+
+            <p id="errorMessage"></p>
+
+        </div>
+
+        <!-- Summary -->
+
+        <div class="summary">
+
+            <div class="box">
+
+                <h3>Total Salary</h3>
+
+                <p id="salaryDisplay">
+                    ₹0
+                </p>
+
+            </div>
+
+            <div class="box">
+
+                <h3>Total Expenses</h3>
+
+                <p id="expenseDisplay">
+                    ₹0
+                </p>
+
+            </div>
+
+            <div class="box">
+
+                <h3>Remaining Balance</h3>
+
+                <p id="balanceDisplay">
+                    ₹0
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Currency Converter -->
+
+        <div class="card">
+
+            <h2>Currency</h2>
+
+            <select id="currencySelect">
+
+                <option value="INR">INR</option>
+
+                <option value="USD">USD</option>
+
+                <option value="EUR">EUR</option>
+
+                <option value="GBP">GBP</option>
+
+            </select>
+
+        </div>
+
+        <!-- Expense List -->
+
+        <div class="card">
+
+            <h2>Expense List</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Amount</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="expenseTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- Pie Chart -->
+
+        <div class="card">
+
+            <h2>Expense Chart</h2>
+
+            <canvas id="expenseChart"></canvas>
+
+        </div>
+
+        <!-- Download Report -->
+
+        <div class="card">
+
+            <button id="downloadPDF">
+
+                Download Report PDF
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

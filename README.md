@@ -26,7 +26,7 @@ Cash-Flow lets users input their salary, log expenses, and view their remaining 
 - **Low Balance Alert** — if Remaining Balance drops below 10% of Total Salary, the UI displays a warning banner and highlights the balance in red
 - **Currency Conversion** — toggle between INR, USD, EUR, and GBP using live exchange rates from the [Frankfurter API](https://www.frankfurter.app/) (with static fallback rates if the API is unavailable)
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - HTML5
 - CSS3
@@ -63,7 +63,7 @@ cashflow-dashboard/
 5. Switch currencies using the dropdown to view converted amounts
 6. Click **Download Report PDF** to export a summary
 
-## ✅ Validation Rules
+##  Validation Rules
 
 - Salary and Expense Amount must be positive numbers
 - Expense Name cannot be empty
